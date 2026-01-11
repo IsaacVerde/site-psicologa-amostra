@@ -1,4 +1,3 @@
-
 import {
   Brain,
   Heart,
@@ -50,7 +49,8 @@ const ServiceCard = ({
   subtitle?: string;
   description: string;
 }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+  // ALTERAÇÃO AQUI: Mudei p-8 para 'p-4 md:p-8' para caber melhor na tela dividida
+  <div className="bg-white p-4 md:p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
     <div className="bg-emerald-50 p-4 rounded-xl mb-6 text-emerald-600">
       <Icon size={32} />
     </div>
@@ -74,7 +74,7 @@ function App() {
         <div className="relative mb-8 group">
           <div className="absolute inset-0 bg-emerald-200 rounded-full blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
           <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl">
-            {/* FOTO DE PERFIL - Coloque sua foto na pasta public */}
+            {/* FOTO DE PERFIL */}
             <img
               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400"
               alt="Dra. Elena Costa"
@@ -102,7 +102,7 @@ function App() {
           </p>
         </div>
 
-        {/* Botão CTA (Call to Action) - AGORA COM WHATSAPP */}
+        {/* Botão CTA (Call to Action) */}
         <a
           href={whatsappLink}
           target="_blank"
@@ -131,7 +131,8 @@ function App() {
             construírem relacionamentos mais saudáveis consigo mesmas.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* ALTERAÇÃO AQUI: Grid de 3 colunas fixo */}
+          <div className="grid grid-cols-3 gap-2 md:gap-6">
             <StatCard
               icon={Brain}
               title="TCC"
@@ -163,7 +164,8 @@ function App() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* ALTERAÇÃO AQUI: Forcei 3 colunas (grid-cols-3) e ajustei o gap */}
+          <div className="grid grid-cols-3 gap-3 md:gap-8">
             <ServiceCard
               icon={Video}
               title="Terapia Online"
